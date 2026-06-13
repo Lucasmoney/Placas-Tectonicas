@@ -44,7 +44,7 @@ const HeroSection = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          style={{ marginTop: '2rem', maxWidth: '600px', fontSize: '1.25rem', color: '#555' }}
+          style={{ color: 'var(--color-text-muted)', marginTop: '2rem', maxWidth: '600px', fontSize: '1.25rem' }}
         >
           Uma planta baixa da litosfera terrestre: sistemas, motor e impactos geológicos.
         </motion.p>

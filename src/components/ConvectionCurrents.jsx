@@ -6,7 +6,7 @@ const ConvectionCurrents = () => {
     <section className="section-container" style={{ backgroundColor: 'var(--color-bg)' }}>
       <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
         <h2 className="text-huge">O motor silencioso</h2>
-        <p className="text-body" style={{ maxWidth: '700px', margin: '1rem auto 0', color: '#555' }}>
+        <p className="text-body" style={{ maxWidth: '700px', margin: '1rem auto 0', color: 'var(--color-text-muted)' }}>
           A força mecânica que desloca montanhas e abre oceanos nasce de uma diferença de densidade térmica no interior do planeta.
         </p>
       </div>
@@ -45,8 +45,8 @@ const ConvectionCurrents = () => {
         </div>
 
         {/* Animation Canvas */}
-        <div style={{ flex: '1 1 300px', background: 'white', borderRadius: '24px', border: '1px solid var(--color-grid)', padding: 'clamp(1rem, 5vw, 2rem)', display: 'flex', justifyContent: 'center', boxShadow: '0 20px 40px rgba(0,0,0,0.03)' }}>
-          <div style={{ position: 'relative', width: '100%', maxWidth: '400px', paddingBottom: '100%', background: '#fafafa', borderRadius: '50%', overflow: 'hidden', border: '1px solid #eee' }}>
+        <div style={{ flex: '1 1 300px', background: 'var(--color-card)', borderRadius: '24px', border: '1px solid var(--color-border)', padding: 'clamp(1rem, 5vw, 2rem)', display: 'flex', justifyContent: 'center', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+          <div style={{ position: 'relative', width: '100%', maxWidth: '400px', paddingBottom: '100%', background: 'rgba(255,255,255,0.02)', borderRadius: '50%', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
             
             {/* Core */}
             <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '60%', height: '60%', background: 'radial-gradient(circle, #ff5400 0%, #b65949 50%, transparent 70%)', borderRadius: '50%', zIndex: 1, filter: 'drop-shadow(0 -10px 20px rgba(255, 84, 0, 0.4))' }} />

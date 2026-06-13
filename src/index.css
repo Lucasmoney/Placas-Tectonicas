@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 :root {
-  --color-bg: #fdfdfc;
-  --color-text: #1a1a1a;
-  --color-accent: #d8705f; /* Terracotta */
-  --color-grid: rgba(0, 0, 0, 0.05);
+  --color-bg: #051024; /* Deep Navy Blue Background */
+  --color-card: #101e3b; /* Card/Container Background */
+  --color-text: #ffffff; /* White Text */
+  --color-text-muted: #94a3b8; /* Light Gray Text */
+  --color-accent: #2563eb; /* Bright Blue for Buttons/Highlights */
+  --color-accent-alt: #38bdf8; /* Light Blue for secondary highlights */
+  --color-grid: rgba(255, 255, 255, 0.03); /* Subtle grid */
+  --color-border: rgba(255, 255, 255, 0.08); /* Card borders */
   
   --font-main: 'Inter', sans-serif;
-  color-scheme: only light;
+  color-scheme: dark;
 }
 
 html {
@@ -25,33 +29,39 @@ html {
 body {
   font-family: var(--font-main);
   background-color: var(--color-bg) !important;
-  /* Imagem PNG 1x1 pixel branco puro para forçar o fundo e quebrar inversores de CSS */
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wYAAwAB/AL+f4R4AAAAAElFTkSuQmCC') !important;
-  background-repeat: repeat !important;
   color: var(--color-text) !important;
-  -webkit-text-fill-color: var(--color-text); /* Removido o !important para permitir overrides */
+  -webkit-text-fill-color: var(--color-text); 
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Exceções do Hack Anti-Inversão para manter as cores dos textos nos botões */
+/* Exceções do Hack Anti-Inversão */
 [style*="color: white"], [style*="color:white"], [style*="color: #ffffff"], [style*="color:#ffffff"], [style*="color: #fff"], [style*="color:#fff"] {
   -webkit-text-fill-color: white !important;
 }
-
 [style*="color: var(--color-text)"], [style*="color:var(--color-text)"] {
   -webkit-text-fill-color: var(--color-text) !important;
 }
 
-/* Subtle grid background like the PDF */
+/* Fundo com leve textura de grid inspirada na imagem */
 .grid-bg {
-  background-color: transparent !important;
+  background-color: var(--color-bg) !important;
   background-image: 
     linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px) !important;
   background-size: 60px 60px, 60px 60px;
   background-position: center;
+  position: relative;
+}
+/* Glow radial no fundo para dar o aspecto da imagem */
+.grid-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 100vh;
+  background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 h1, h2, h3, h4 {
