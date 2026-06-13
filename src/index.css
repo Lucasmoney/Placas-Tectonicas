@@ -29,10 +29,19 @@ body {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wYAAwAB/AL+f4R4AAAAAElFTkSuQmCC') !important;
   background-repeat: repeat !important;
   color: var(--color-text) !important;
-  -webkit-text-fill-color: var(--color-text) !important; /* Força a cor do texto a não ser invertida */
+  -webkit-text-fill-color: var(--color-text); /* Removido o !important para permitir overrides */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Exceções do Hack Anti-Inversão para manter as cores dos textos nos botões */
+[style*="color: white"], [style*="color:white"], [style*="color: #ffffff"], [style*="color:#ffffff"], [style*="color: #fff"], [style*="color:#fff"] {
+  -webkit-text-fill-color: white !important;
+}
+
+[style*="color: var(--color-text)"], [style*="color:var(--color-text)"] {
+  -webkit-text-fill-color: var(--color-text) !important;
 }
 
 /* Subtle grid background like the PDF */
