@@ -49,7 +49,7 @@ const ConvectionCurrents = () => {
           <div style={{ position: 'relative', width: '100%', maxWidth: '400px', paddingBottom: '100%', background: '#fafafa', borderRadius: '50%', overflow: 'hidden', border: '1px solid #eee' }}>
             
             {/* Core */}
-            <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '60%', height: '60%', background: 'radial-gradient(circle, #ff5400 0%, #b65949 50%, transparent 70%)', borderRadius: '50%', zIndex: 1, filter: 'drop-shadow(0 -10px 20px rgba(255, 84, 0, 0.4))' }} />
+            <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '60%', height: '60%', background: 'radial-gradient(circle, #3B82F6 0%, #2563EB 50%, transparent 70%)', borderRadius: '50%', zIndex: 1, filter: 'drop-shadow(0 -10px 20px rgba(59, 130, 246, 0.4))' }} />
             <div style={{ position: 'absolute', bottom: '-10%', left: '50%', transform: 'translateX(-50%)', fontWeight: 800, color: '#fff', zIndex: 2, textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>NÚCLEO</div>
 
             {/* Crust / Lithosphere */}

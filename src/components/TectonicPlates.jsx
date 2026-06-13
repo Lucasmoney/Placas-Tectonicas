@@ -11,7 +11,7 @@ const TectonicPlates = () => {
     pacifica: { 
       id: 'pacifica', name: 'Placa do Pacífico', size: '103.3M km²', 
       desc: 'A maior placa do planeta. Seu movimento e atrito constante nas bordas criam o intenso Círculo de Fogo.', 
-      color: '#fce8e6', borderColor: '#d8705f', 
+      color: '#EEF6FF', borderColor: '#3B82F6', 
       path: "M 60 80 L 320 60 L 380 320 L 260 540 L 40 480 Z", 
       centerX: 200, centerY: 280, 
       scatter: { x: -80, y: -40, rotate: -10 } 
@@ -19,7 +19,7 @@ const TectonicPlates = () => {
     nazca: { 
       id: 'nazca', name: 'Placa de Nazca', size: '15.6M km²', 
       desc: 'Placa oceânica pesada que afunda (subducção) sob a América do Sul, erguendo a majestosa Cordilheira dos Andes.', 
-      color: '#fef7e0', borderColor: '#f2c94c', 
+      color: '#D8E7FF', borderColor: '#2563EB', 
       path: "M 350 280 L 470 320 L 440 520 L 300 480 Z", 
       centerX: 390, centerY: 400, 
       scatter: { x: -30, y: 80, rotate: 15 } 
@@ -27,7 +27,7 @@ const TectonicPlates = () => {
     sul_americana: { 
       id: 'sul_americana', name: 'Placa Sul-Americana', size: '43.6M km²', 
       desc: 'O Brasil repousa de forma segura exatamente no centro deste enorme bloco rochoso, longe do caos das bordas.', 
-      color: '#e6f4ea', borderColor: '#27ae60', 
+      color: '#F4F8FF', borderColor: '#60A5FA', 
       path: "M 440 160 L 660 140 L 740 380 L 600 560 L 450 540 L 480 300 Z", 
       centerX: 580, centerY: 350, 
       scatter: { x: 40, y: -60, rotate: 8 } 
@@ -35,7 +35,7 @@ const TectonicPlates = () => {
     africana: { 
       id: 'africana', name: 'Placa Africana', size: '61.3M km²', 
       desc: 'Está se afastando da placa Sul-Americana, fazendo com que o Oceano Atlântico cresça alguns centímetros por ano.', 
-      color: '#f3e5f5', borderColor: '#9b59b6', 
+      color: '#FFFFFF', borderColor: '#38BDF8', 
       path: "M 700 120 L 960 100 L 960 450 L 800 600 L 640 580 L 760 360 Z", 
       centerX: 820, centerY: 350, 
       scatter: { x: 120, y: 40, rotate: -12 } 

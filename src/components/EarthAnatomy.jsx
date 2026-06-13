@@ -48,7 +48,7 @@ const EarthAnatomy = () => {
             <defs>
               <radialGradient id="mantle-grad" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#f4a261" />
-                <stop offset="100%" stopColor="#e76f51" />
+                <stop offset="100%" stopColor="#2563EB" />
               </radialGradient>
               <radialGradient id="mantle-grad-active" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#f4a261" />
@@ -56,7 +56,7 @@ const EarthAnatomy = () => {
               </radialGradient>
               <radialGradient id="core-grad" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#ffea00" />
-                <stop offset="100%" stopColor="#ff5400" />
+                <stop offset="100%" stopColor="#3B82F6" />
               </radialGradient>
               <radialGradient id="core-grad-active" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#fffb00" />
@@ -131,7 +131,7 @@ const EarthAnatomy = () => {
                   borderRadius: '16px',
                   border: '1px solid var(--color-grid)',
                   boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
-                  borderTop: `4px solid ${activeLayer === 'core' ? '#ff5400' : activeLayer === 'mantle' ? '#e76f51' : '#1a1a1a'}`
+                  borderTop: `4px solid ${activeLayer === 'core' ? '#3B82F6' : activeLayer === 'mantle' ? '#2563EB' : '#1a1a1a'}`
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>

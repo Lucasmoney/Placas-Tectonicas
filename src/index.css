@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 :root {
-  --color-bg: #fdfdfc;
+  --color-bg: #EEF6FF;
   --color-text: #1a1a1a;
-  --color-accent: #d8705f; /* Terracotta */
-  --color-grid: rgba(0, 0, 0, 0.05);
+  --color-accent: #2563EB; /* Azul Primario */
+  --color-grid: #D8E7FF;
   
   --font-main: 'Inter', sans-serif;
   color-scheme: only light;

@@ -70,7 +70,7 @@ function App() {
             exit={{ opacity: 0, y: 20 }}
             transition={{ y: { repeat: Infinity, duration: 2, ease: "easeInOut" } }}
             onClick={scrollDown}
-            whileHover={{ scale: 1.1, backgroundColor: '#c55d4c' }}
+            whileHover={{ scale: 1.1, backgroundColor: '#1D4ED8' }}
             whileTap={{ scale: 0.9 }}
             style={{
               position: 'fixed',
@@ -88,7 +88,7 @@ function App() {
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: '0 8px 20px rgba(216, 112, 95, 0.4)'
+              boxShadow: '0 8px 20px rgba(37, 99, 235, 0.4)'
             }}
           >
             <ChevronDown size={32} />

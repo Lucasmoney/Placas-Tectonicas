@@ -9,21 +9,21 @@ const EarthquakesVolcanoes = () => {
     ring: {
       id: 'ring',
       title: 'O Círculo de Fogo',
-      icon: <Flame size={24} color="#d8705f" />,
+      icon: <Flame size={24} color="var(--color-accent)" />,
       stats: '40.000 km',
       desc: 'Extensão contínua de atividade geológica extrema ao redor da colossal Placa do Pacífico.'
     },
     volcanoes: {
       id: 'volcanoes',
       title: 'Vulcões Ativos',
-      icon: <Activity size={24} color="#d8705f" />,
+      icon: <Activity size={24} color="var(--color-accent)" />,
       stats: '452 vulcões',
       desc: 'Concentrados nesta região em formato de arco, impulsionados pelas zonas de subducção.'
     },
     earthquakes: {
       id: 'earthquakes',
       title: 'Terremotos',
-      icon: <Waves size={24} color="#d8705f" />,
+      icon: <Waves size={24} color="var(--color-accent)" />,
       stats: '90%',
       desc: 'Dos terremotos de todo o mundo são registrados neste arco de instabilidade.'
     }
@@ -102,7 +102,7 @@ const EarthquakesVolcanoes = () => {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(216, 112, 95, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(37, 99, 235, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {points[key].icon}
                 </div>
                 <div>

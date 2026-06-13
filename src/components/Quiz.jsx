@@ -121,13 +121,13 @@ const Quiz = () => {
 
                     if (selectedAnswer !== null) {
                       if (idx === questions[currentQ].ans) {
-                        bg = '#e6f4ea';
-                        border = '1px solid #34a853';
-                        icon = <CheckCircle color="#34a853" />;
+                        bg = '#EEF6FF';
+                        border = '1px solid #2563EB';
+                        icon = <CheckCircle color="#2563EB" />;
                       } else if (idx === selectedAnswer) {
-                        bg = '#fce8e6';
-                        border = '1px solid #ea4335';
-                        icon = <XCircle color="#ea4335" />;
+                        bg = '#D8E7FF';
+                        border = '1px solid #38BDF8';
+                        icon = <XCircle color="#38BDF8" />;
                       }
                     }
 
@@ -168,12 +168,12 @@ const Quiz = () => {
                     >
                       <div style={{ 
                         padding: '1.5rem', 
-                        background: selectedAnswer === questions[currentQ].ans ? '#e6f4ea' : '#fce8e6', 
+                        background: selectedAnswer === questions[currentQ].ans ? '#EEF6FF' : '#D8E7FF', 
                         borderRadius: '12px', 
-                        borderLeft: `4px solid ${selectedAnswer === questions[currentQ].ans ? '#34a853' : '#ea4335'}`
+                        borderLeft: `4px solid ${selectedAnswer === questions[currentQ].ans ? '#2563EB' : '#38BDF8'}`
                       }}>
                         <p style={{ fontSize: '1rem', color: '#333', lineHeight: 1.5 }}>
-                          <strong style={{ color: selectedAnswer === questions[currentQ].ans ? '#137333' : '#c5221f' }}>
+                          <strong style={{ color: selectedAnswer === questions[currentQ].ans ? '#1D4ED8' : '#0F172A' }}>
                             {selectedAnswer === questions[currentQ].ans ? 'Correto! ' : 'Incorreto. '}
                           </strong>
                           {questions[currentQ].exp}

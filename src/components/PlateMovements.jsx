@@ -121,7 +121,7 @@ const PlateMovements = () => {
             {activeTab === 'divergent' && (
               <div style={{ position: 'relative', width: '200px', height: '100px', display: 'flex' }}>
                 {/* Mantle Background */}
-                <div style={{ position: 'absolute', bottom: -50, left: -50, right: -50, height: '100px', background: '#d8705f33' }} />
+                <div style={{ position: 'absolute', bottom: -50, left: -50, right: -50, height: '100px', background: 'rgba(37, 99, 235, 0.2)' }} />
                 <motion.div 
                   initial={{ x: 0 }}
                   animate={isPlaying ? { x: -40 } : { x: 0 }}
@@ -146,7 +146,7 @@ const PlateMovements = () => {
 
             {activeTab === 'convergent' && (
               <div style={{ position: 'relative', width: '240px', height: '100px', display: 'flex' }}>
-                 <div style={{ position: 'absolute', bottom: -50, left: -50, right: -50, height: '100px', background: '#d8705f33' }} />
+                 <div style={{ position: 'absolute', bottom: -50, left: -50, right: -50, height: '100px', background: 'rgba(37, 99, 235, 0.2)' }} />
                 <motion.div 
                   initial={{ x: -40 }}
                   animate={isPlaying ? { x: 0 } : { x: -40 }}
