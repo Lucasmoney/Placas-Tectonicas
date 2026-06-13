@@ -14,8 +14,8 @@ const Summary = () => {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
         <motion.div 
-          whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(216, 112, 95, 0.15)', borderColor: 'var(--color-accent)' }}
-          style={{ padding: '2.5rem', border: '1px solid var(--color-grid)', borderRadius: '16px', background: 'linear-gradient(145deg, #ffffff, #fff5f3)', display: 'flex', flexDirection: 'column', transition: 'border-color 0.3s' }}
+          whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(37, 99, 235, 0.15)', borderColor: 'var(--color-accent)' }}
+          style={{ padding: '2.5rem', border: '1px solid var(--color-grid)', borderRadius: '16px', background: 'linear-gradient(145deg, #ffffff, #eff6ff)', display: 'flex', flexDirection: 'column', transition: 'border-color 0.3s' }}
         >
           <Clock size={40} color="var(--color-accent)" style={{ marginBottom: '1.5rem' }} />
           <h3 className="text-h2" style={{ marginBottom: '1rem' }}>Deriva Continental</h3>

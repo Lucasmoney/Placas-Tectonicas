@@ -147,7 +147,7 @@ const EarthAnatomy = () => {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(216, 112, 95, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(37, 99, 235, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <Ruler size={24} color="var(--color-accent)" />
                     </div>
                     <div>
@@ -157,7 +157,7 @@ const EarthAnatomy = () => {
                   </div>
                   
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(216, 112, 95, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(37, 99, 235, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <Thermometer size={24} color="var(--color-accent)" />
                     </div>
                     <div>

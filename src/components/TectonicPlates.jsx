@@ -11,7 +11,7 @@ const TectonicPlates = () => {
     pacifica: { 
       id: 'pacifica', name: 'Placa do Pacífico', size: '103.3M km²', 
       desc: 'A maior placa do planeta. Seu movimento e atrito constante nas bordas criam o intenso Círculo de Fogo.', 
-      color: '#fce8e6', borderColor: '#d8705f', 
+      color: '#eff6ff', borderColor: '#2563eb', 
       path: "M 60 80 L 320 60 L 380 320 L 260 540 L 40 480 Z", 
       centerX: 200, centerY: 280, 
       scatter: { x: -80, y: -40, rotate: -10 } 

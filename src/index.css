@@ -3,7 +3,7 @@
 :root {
   --color-bg: #fdfdfc;
   --color-text: #1a1a1a;
-  --color-accent: #d8705f; /* Terracotta */
+  --color-accent: #2563eb; /* Azul Bonito */
   --color-grid: rgba(0, 0, 0, 0.05);
   
   --font-main: 'Inter', sans-serif;
