@@ -11,7 +11,7 @@ const TectonicPlates = () => {
     pacifica: { 
       id: 'pacifica', name: 'Placa do Pacífico', size: '103.3M km²', 
       desc: 'A maior placa do planeta. Seu movimento e atrito constante nas bordas criam o intenso Círculo de Fogo.', 
-      color: '#EEF6FF', borderColor: '#3B82F6', 
+      color: '#1D4ED8', borderColor: '#3B82F6', 
       path: "M 60 80 L 320 60 L 380 320 L 260 540 L 40 480 Z", 
       centerX: 200, centerY: 280, 
       scatter: { x: -80, y: -40, rotate: -10 } 
@@ -19,7 +19,7 @@ const TectonicPlates = () => {
     nazca: { 
       id: 'nazca', name: 'Placa de Nazca', size: '15.6M km²', 
       desc: 'Placa oceânica pesada que afunda (subducção) sob a América do Sul, erguendo a majestosa Cordilheira dos Andes.', 
-      color: '#D8E7FF', borderColor: '#2563EB', 
+      color: '#3B82F6', borderColor: '#60A5FA', 
       path: "M 350 280 L 470 320 L 440 520 L 300 480 Z", 
       centerX: 390, centerY: 400, 
       scatter: { x: -30, y: 80, rotate: 15 } 
@@ -27,7 +27,7 @@ const TectonicPlates = () => {
     sul_americana: { 
       id: 'sul_americana', name: 'Placa Sul-Americana', size: '43.6M km²', 
       desc: 'O Brasil repousa de forma segura exatamente no centro deste enorme bloco rochoso, longe do caos das bordas.', 
-      color: '#F4F8FF', borderColor: '#60A5FA', 
+      color: '#60A5FA', borderColor: '#93C5FD', 
       path: "M 440 160 L 660 140 L 740 380 L 600 560 L 450 540 L 480 300 Z", 
       centerX: 580, centerY: 350, 
       scatter: { x: 40, y: -60, rotate: 8 } 
@@ -35,7 +35,7 @@ const TectonicPlates = () => {
     africana: { 
       id: 'africana', name: 'Placa Africana', size: '61.3M km²', 
       desc: 'Está se afastando da placa Sul-Americana, fazendo com que o Oceano Atlântico cresça alguns centímetros por ano.', 
-      color: '#FFFFFF', borderColor: '#38BDF8', 
+      color: '#93C5FD', borderColor: '#BFDBFE', 
       path: "M 700 120 L 960 100 L 960 450 L 800 600 L 640 580 L 760 360 Z", 
       centerX: 820, centerY: 350, 
       scatter: { x: 120, y: 40, rotate: -12 } 
@@ -50,12 +50,12 @@ const TectonicPlates = () => {
   });
 
   return (
-    <section className="section-container" style={{ backgroundColor: 'white' }}>
+    <section className="section-container" style={{ backgroundColor: 'var(--color-bg)' }}>
       <div style={{ marginBottom: '4rem', display: 'flex', flexWrap: 'wrap', gap: 'clamp(2rem, 8vw, 4rem)', alignItems: 'center' }}>
         
         <div style={{ flex: '1 1 300px' }}>
-          <h2 className="text-huge" style={{ marginBottom: '2rem', color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a' }}>O que são placas<br/>tectônicas?</h2>
-          <p className="text-body" style={{ color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a', maxWidth: '500px', marginBottom: '2rem' }}>
+          <h2 className="text-huge" style={{ marginBottom: '2rem', color: 'var(--color-text-title)', WebkitTextFillColor: 'var(--color-text-title)' }}>O que são placas<br/>tectônicas?</h2>
+          <p className="text-body" style={{ color: 'var(--color-text-secondary)', WebkitTextFillColor: 'var(--color-text-secondary)', maxWidth: '500px', marginBottom: '2rem' }}>
             A litosfera terrestre não é uma casca contínua. Ela é um gigantesco quebra-cabeça fracturado em blocos de rocha flutuante.
             <br/><br/>
             Esses blocos se movem independentemente. <strong style={{ color: 'var(--color-accent)', WebkitTextFillColor: 'var(--color-accent)' }}>Arraste as peças ao lado</strong> para entender como elas se separam e interagem na prática!
@@ -67,8 +67,8 @@ const TectonicPlates = () => {
               display: 'inline-flex', alignItems: 'center', gap: '0.75rem', 
               padding: '1rem 2rem', 
               background: isScattered ? 'var(--color-text)' : 'var(--color-accent)', 
-              color: 'white',
-              WebkitTextFillColor: 'white',
+              color: 'var(--color-text-title)',
+              WebkitTextFillColor: 'var(--color-text-title)',
               borderRadius: '30px', 
               fontWeight: 600, fontSize: '1rem', 
               transition: 'all 0.3s',
@@ -96,7 +96,7 @@ const TectonicPlates = () => {
                   top: '-1rem',
                   left: 0,
                   right: 0,
-                  background: 'white',
+                  background: 'var(--color-card)',
                   padding: '1.5rem',
                   borderRadius: '16px',
                   boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
@@ -105,8 +105,8 @@ const TectonicPlates = () => {
                 }}
               >
                 <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: platesData[activePlate].borderColor, WebkitTextFillColor: platesData[activePlate].borderColor, fontWeight: 800 }}>{platesData[activePlate].name}</h4>
-                <div style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem', color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Área: {platesData[activePlate].size}</div>
-                <p style={{ fontSize: '1rem', color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a', lineHeight: 1.5 }}>{platesData[activePlate].desc}</p>
+                <div style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--color-text-secondary)', WebkitTextFillColor: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Área: {platesData[activePlate].size}</div>
+                <p style={{ fontSize: '1rem', color: 'var(--color-text-secondary)', WebkitTextFillColor: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{platesData[activePlate].desc}</p>
               </motion.div>
             ) : (
                <motion.div
@@ -131,7 +131,7 @@ const TectonicPlates = () => {
                   boxShadow: '0 5px 15px rgba(0,0,0,0.05)'
                 }}
               >
-                <Hand size={18} color="var(--color-accent)" /> <span style={{ color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a' }}>Toque e arraste as placas</span>
+                <Hand size={18} color="var(--color-accent)" /> <span style={{ color: 'var(--color-text-secondary)', WebkitTextFillColor: 'var(--color-text-secondary)' }}>Toque e arraste as placas</span>
               </motion.div>
             )}
           </AnimatePresence>
@@ -180,7 +180,7 @@ const TectonicPlates = () => {
                     >
                       <path 
                         d={plate.path} 
-                        fill={activePlate === key ? plate.color : 'white'} 
+                        fill={activePlate === key ? plate.color : 'var(--color-bg)'}
                         stroke={plate.borderColor} 
                         strokeWidth={activePlate === key ? "6" : "3"} 
                         strokeLinejoin="round"

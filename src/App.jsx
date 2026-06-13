@@ -53,9 +53,9 @@ function App() {
         <Summary />
         <Quiz />
         <footer style={{ padding: '3rem 5%', textAlign: 'center', backgroundColor: 'transparent', marginTop: '2rem' }}>
-          <div style={{ padding: '2rem', borderRadius: '16px', background: 'white', border: '1px solid var(--color-grid)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
+          <div style={{ padding: '2rem', borderRadius: '16px', background: 'var(--color-card)', border: '1px solid var(--color-card-border)', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }}>
             <p style={{ color: 'var(--color-accent)', fontSize: '0.875rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>Equipe de Desenvolvimento</p>
-            <p style={{ color: '#555', fontSize: '1.125rem', fontWeight: 600 }}>
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.125rem', fontWeight: 600 }}>
               Beatriz &bull; Eloisa &bull; Maria Vitória &bull; Ana Carolina &bull; Milena &bull; Yasmin &bull; Lucas
             </p>
           </div>

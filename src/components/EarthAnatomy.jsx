@@ -47,16 +47,16 @@ const EarthAnatomy = () => {
           <svg viewBox="0 0 100 100" style={{ width: '100%', height: 'auto', overflow: 'visible', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.05))' }}>
             <defs>
               <radialGradient id="mantle-grad" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#f4a261" />
-                <stop offset="100%" stopColor="#2563EB" />
+                <stop offset="0%" stopColor="#93C5FD" />
+                <stop offset="100%" stopColor="#60A5FA" />
               </radialGradient>
               <radialGradient id="mantle-grad-active" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#f4a261" />
                 <stop offset="100%" stopColor="#d84b2a" />
               </radialGradient>
               <radialGradient id="core-grad" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#ffea00" />
-                <stop offset="100%" stopColor="#3B82F6" />
+                <stop offset="0%" stopColor="#38BDF8" />
+                <stop offset="100%" stopColor="#2563EB" />
               </radialGradient>
               <radialGradient id="core-grad-active" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#fffb00" />
@@ -65,7 +65,7 @@ const EarthAnatomy = () => {
             </defs>
 
             {/* Base Outline */}
-            <circle cx="50" cy="50" r="48" fill="#fcfcfc" stroke="var(--color-grid)" strokeWidth="0.5" />
+            <circle cx="50" cy="50" r="48" fill="#BFDBFE" stroke={activeLayer === 'crust' ? 'var(--color-accent)' : '#94A3B8'} strokeWidth="1" />
             <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(0,0,0,0.1)" strokeWidth="0.5" strokeDasharray="2,2" />
             <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,0,0,0.1)" strokeWidth="0.5" strokeDasharray="2,2" />
 

@@ -9,21 +9,21 @@ const EarthquakesVolcanoes = () => {
     ring: {
       id: 'ring',
       title: 'O Círculo de Fogo',
-      icon: <Flame size={24} color="var(--color-accent)" />,
+      icon: <Flame size={24} color="#60A5FA" />,
       stats: '40.000 km',
       desc: 'Extensão contínua de atividade geológica extrema ao redor da colossal Placa do Pacífico.'
     },
     volcanoes: {
       id: 'volcanoes',
       title: 'Vulcões Ativos',
-      icon: <Activity size={24} color="var(--color-accent)" />,
+      icon: <Activity size={24} color="#60A5FA" />,
       stats: '452 vulcões',
       desc: 'Concentrados nesta região em formato de arco, impulsionados pelas zonas de subducção.'
     },
     earthquakes: {
       id: 'earthquakes',
       title: 'Terremotos',
-      icon: <Waves size={24} color="var(--color-accent)" />,
+      icon: <Waves size={24} color="#60A5FA" />,
       stats: '90%',
       desc: 'Dos terremotos de todo o mundo são registrados neste arco de instabilidade.'
     }
@@ -33,14 +33,14 @@ const EarthquakesVolcanoes = () => {
     <section className="section-container" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={{ marginBottom: '3rem' }}>
         <h2 className="text-huge">O Círculo de Fogo<br/>do Pacífico</h2>
-        <p className="text-body" style={{ maxWidth: '600px', margin: '1rem 0 0', color: '#555' }}>
+        <p className="text-body" style={{ maxWidth: '600px', margin: '1rem 0 0', color: 'var(--color-text-secondary)' }}>
           A maior arena de instabilidade tectônica do planeta. Uma faixa impulsionada pelas zonas de subducção cobrindo territórios de 27 países.
         </p>
       </div>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(2rem, 8vw, 4rem)', alignItems: 'stretch' }}>
         {/* Interactive Map */}
-        <div style={{ flex: '1 1 300px', position: 'relative', background: '#fdfdfc', border: '1px solid var(--color-grid)', borderRadius: '24px', overflow: 'hidden', paddingBottom: '70%', minHeight: '300px' }}>
+        <div style={{ flex: '1 1 300px', position: 'relative', background: 'var(--color-bg)', border: '1px solid var(--color-card-border)', borderRadius: '24px', overflow: 'hidden', paddingBottom: '70%', minHeight: '300px' }}>
           {/* Base World Map SVG */}
           <svg viewBox="0 0 100 50" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
             {/* Simple Continents */}
@@ -51,7 +51,7 @@ const EarthquakesVolcanoes = () => {
             <motion.path 
               d="M 25 35 Q 20 20 30 10 Q 50 -5 70 10 Q 85 20 80 40 Q 75 45 60 40"
               fill="none" 
-              stroke="var(--color-accent)" 
+              stroke="#60A5FA"
               strokeWidth="1.5" 
               strokeLinecap="round"
               initial={{ pathLength: 0, opacity: 0 }}
@@ -62,18 +62,18 @@ const EarthquakesVolcanoes = () => {
 
             {/* Glowing Nodes for interactivity */}
             <g style={{ cursor: 'pointer' }} onMouseEnter={() => setActivePoint('ring')} onMouseLeave={() => setActivePoint(null)}>
-              <circle cx="25" cy="35" r="2" fill="var(--color-accent)" opacity={activePoint === 'ring' ? 1 : 0.5} />
-              <motion.circle cx="25" cy="35" r="4" fill="none" stroke="var(--color-accent)" strokeWidth="0.5" animate={{ scale: [1, 2, 1], opacity: [0.8, 0, 0.8] }} transition={{ repeat: Infinity, duration: 2 }} />
+              <circle cx="25" cy="35" r="2" fill={activePoint === 'ring' ? '#38BDF8' : '#60A5FA'} opacity={activePoint === 'ring' ? 1 : 0.5} />
+              <motion.circle cx="25" cy="35" r="4" fill="none" stroke="#38BDF8" strokeWidth="0.5" animate={{ scale: [1, 2, 1], opacity: [0.8, 0, 0.8] }} transition={{ repeat: Infinity, duration: 2 }} />
             </g>
 
             <g style={{ cursor: 'pointer' }} onMouseEnter={() => setActivePoint('volcanoes')} onMouseLeave={() => setActivePoint(null)}>
-              <circle cx="50" cy="5" r="2" fill="var(--color-accent)" opacity={activePoint === 'volcanoes' ? 1 : 0.5} />
-              <motion.circle cx="50" cy="5" r="4" fill="none" stroke="var(--color-accent)" strokeWidth="0.5" animate={{ scale: [1, 2, 1], opacity: [0.8, 0, 0.8] }} transition={{ repeat: Infinity, duration: 2, delay: 0.5 }} />
+              <circle cx="50" cy="5" r="2" fill={activePoint === 'volcanoes' ? '#38BDF8' : '#60A5FA'} opacity={activePoint === 'volcanoes' ? 1 : 0.5} />
+              <motion.circle cx="50" cy="5" r="4" fill="none" stroke="#38BDF8" strokeWidth="0.5" animate={{ scale: [1, 2, 1], opacity: [0.8, 0, 0.8] }} transition={{ repeat: Infinity, duration: 2, delay: 0.5 }} />
             </g>
 
             <g style={{ cursor: 'pointer' }} onMouseEnter={() => setActivePoint('earthquakes')} onMouseLeave={() => setActivePoint(null)}>
-              <circle cx="80" cy="40" r="2" fill="var(--color-accent)" opacity={activePoint === 'earthquakes' ? 1 : 0.5} />
-              <motion.circle cx="80" cy="40" r="4" fill="none" stroke="var(--color-accent)" strokeWidth="0.5" animate={{ scale: [1, 2, 1], opacity: [0.8, 0, 0.8] }} transition={{ repeat: Infinity, duration: 2, delay: 1 }} />
+              <circle cx="80" cy="40" r="2" fill={activePoint === 'earthquakes' ? '#38BDF8' : '#60A5FA'} opacity={activePoint === 'earthquakes' ? 1 : 0.5} />
+              <motion.circle cx="80" cy="40" r="4" fill="none" stroke="#38BDF8" strokeWidth="0.5" animate={{ scale: [1, 2, 1], opacity: [0.8, 0, 0.8] }} transition={{ repeat: Infinity, duration: 2, delay: 1 }} />
             </g>
           </svg>
         </div>
@@ -94,7 +94,7 @@ const EarthquakesVolcanoes = () => {
               }}
               style={{
                 padding: '2rem',
-                background: 'white',
+                background: 'var(--color-card)',
                 borderRadius: '16px',
                 border: '1px solid var(--color-grid)',
                 cursor: 'pointer',
@@ -112,7 +112,7 @@ const EarthquakesVolcanoes = () => {
               <div style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--color-accent)', marginBottom: '0.5rem', lineHeight: 1 }}>
                 {points[key].stats}
               </div>
-              <p style={{ color: '#555', lineHeight: 1.5 }}>
+              <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
                 {points[key].desc}
               </p>
             </motion.div>

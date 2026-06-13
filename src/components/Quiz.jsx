@@ -99,14 +99,14 @@ const Quiz = () => {
       <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h2 className="text-huge">Teste de Conhecimento</h2>
-          <p className="text-body" style={{ color: '#555', marginTop: '1rem' }}>Todas as respostas estão contidas no material acima. Vamos ver se você aprendeu de verdade!</p>
+          <p className="text-body" style={{ color: 'var(--color-text-secondary)', marginTop: '1rem' }}>Todas as respostas estão contidas no material acima. Vamos ver se você aprendeu de verdade!</p>
         </div>
 
-        <div style={{ background: 'white', borderRadius: '24px', padding: 'clamp(1.5rem, 5vw, 3rem)', border: '1px solid var(--color-grid)', boxShadow: '0 20px 40px rgba(0,0,0,0.03)', minHeight: '450px', position: 'relative' }}>
+        <div style={{ background: 'var(--color-card)', borderRadius: '24px', padding: 'clamp(1.5rem, 5vw, 3rem)', border: '1px solid var(--color-card-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)', minHeight: '450px', position: 'relative' }}>
           <AnimatePresence mode="wait">
             {!showResult ? (
               <motion.div key="quiz" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem', color: '#888', fontWeight: 600, textTransform: 'uppercase', fontSize: '0.875rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', fontSize: '0.875rem' }}>
                   <span>Pergunta {currentQ + 1} de {questions.length}</span>
                   <span>Pontuação: {score}</span>
                 </div>
@@ -172,7 +172,7 @@ const Quiz = () => {
                         borderRadius: '12px', 
                         borderLeft: `4px solid ${selectedAnswer === questions[currentQ].ans ? '#2563EB' : '#38BDF8'}`
                       }}>
-                        <p style={{ fontSize: '1rem', color: '#333', lineHeight: 1.5 }}>
+                        <p style={{ fontSize: '1rem', color: 'var(--color-text-title)', lineHeight: 1.5 }}>
                           <strong style={{ color: selectedAnswer === questions[currentQ].ans ? '#1D4ED8' : '#0F172A' }}>
                             {selectedAnswer === questions[currentQ].ans ? 'Correto! ' : 'Incorreto. '}
                           </strong>
@@ -183,7 +183,7 @@ const Quiz = () => {
                       <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.5rem' }}>
                         <button 
                           onClick={handleNext}
-                          style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 2rem', background: 'var(--color-text)', color: 'white', borderRadius: '30px', fontSize: '1rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}
+                          style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 2rem', background: 'var(--color-accent)', color: 'white', borderRadius: '30px', fontSize: '1rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}
                         >
                           {currentQ + 1 < questions.length ? 'Próxima Pergunta' : 'Ver Resultado'} <ArrowRight size={18} />
                         </button>
@@ -199,12 +199,12 @@ const Quiz = () => {
                 <div style={{ fontSize: '6rem', fontWeight: 800, color: 'var(--color-accent)', marginBottom: '1rem', lineHeight: 1 }}>
                   {score}/{questions.length}
                 </div>
-                <p className="text-body" style={{ color: '#555', marginBottom: '3rem', fontSize: '1.25rem' }}>
+                <p className="text-body" style={{ color: 'var(--color-text-secondary)', marginBottom: '3rem', fontSize: '1.25rem' }}>
                   {score === 10 ? "Perfeito! Você é um especialista em placas tectônicas e comprovou sua leitura!" : 
                    score >= 7 ? "Muito bom! Você absorveu bem o conteúdo da página." : 
                    "Boa tentativa! Que tal reler as seções acima e testar novamente?"}
                 </p>
-                <button onClick={restartQuiz} style={{ padding: '1rem 3rem', background: 'var(--color-text)', color: 'white', borderRadius: '30px', fontSize: '1.125rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>
+                <button onClick={restartQuiz} style={{ padding: '1rem 3rem', background: 'var(--color-accent)', color: 'white', borderRadius: '30px', fontSize: '1.125rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>
                   Tentar Novamente
                 </button>
               </motion.div>

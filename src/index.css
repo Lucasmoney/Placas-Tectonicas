@@ -30,42 +30,57 @@ body {
   background-repeat: repeat !important;
   color: var(--color-text) !important;
   -webkit-text-fill-color: var(--color-text); /* Removido o !important para permitir overrides */
+  background: linear-gradient(135deg, #08172D 0%, #0B1F3A 50%, #102B52 100%);
+  background-attachment: fixed;
+  color: var(--color-text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Exceções do Hack Anti-Inversão para manter as cores dos textos nos botões */
-[style*="color: white"], [style*="color:white"], [style*="color: #ffffff"], [style*="color:#ffffff"], [style*="color: #fff"], [style*="color:#fff"] {
-  -webkit-text-fill-color: white !important;
-}
-
-[style*="color: var(--color-text)"], [style*="color:var(--color-text)"] {
-  -webkit-text-fill-color: var(--color-text) !important;
-}
-
-/* Subtle grid background like the PDF */
-.grid-bg {
-  background-color: transparent !important;
+/* Background Grid Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image: 
     linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px) !important;
-  background-size: 60px 60px, 60px 60px;
-  background-position: center;
+    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
 }
 
-h1, h2, h3, h4 {
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+  color: #F8FAFC;
 }
 
 /* Typography scaling */
 .text-hero { font-size: clamp(3.5rem, 8vw, 7rem); }
-.text-huge { font-size: clamp(2.5rem, 6vw, 5rem); }
-.text-h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
-.text-h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
-.text-body { font-size: 1.125rem; line-height: 1.6; }
+.text-huge {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+.text-h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+.text-h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+.text-body {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #94A3B8;
+}
 
 .section-container {
   min-height: 100svh;
