@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+  --color-bg: #fdfdfc;
+  --color-text: #1a1a1a;
+  --color-accent: #d8705f; /* Terracotta */
+  --color-grid: rgba(0, 0, 0, 0.05);
+  
+  --font-main: 'Inter', sans-serif;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle grid background like the PDF */
+.grid-bg {
+  background-image: 
+    linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+/* Typography scaling */
+.text-hero { font-size: clamp(3.5rem, 8vw, 7rem); }
+.text-huge { font-size: clamp(2.5rem, 6vw, 5rem); }
+.text-h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
+.text-h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+.text-body { font-size: 1.125rem; line-height: 1.6; }
+
+.section-container {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 5vh, 4rem) 5%;
+  position: relative;
+  z-index: 1;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
