@@ -90,13 +90,13 @@ const EarthquakesVolcanoes = () => {
               animate={{ 
                 scale: activePoint === key ? 1.02 : 1,
                 boxShadow: activePoint === key ? '0 10px 30px rgba(0,0,0,0.05)' : 'none',
-                borderColor: activePoint === key ? 'var(--color-accent)' : 'var(--color-border)'
+                borderColor: activePoint === key ? 'var(--color-accent)' : 'var(--color-grid)'
               }}
               style={{
                 padding: '2rem',
-                background: 'var(--color-card)',
+                background: 'white',
                 borderRadius: '16px',
-                border: '1px solid var(--color-border)',
+                border: '1px solid var(--color-grid)',
                 cursor: 'pointer',
                 transition: 'all 0.3s'
               }}
