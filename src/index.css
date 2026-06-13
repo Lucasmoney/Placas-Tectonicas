@@ -24,8 +24,9 @@ html {
 
 body {
   font-family: var(--font-main);
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--color-bg) !important;
+  background-image: linear-gradient(var(--color-bg), var(--color-bg)) !important; /* Anti-inversion hack for MIUI/Samsung */
+  color: var(--color-text) !important;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,10 +34,12 @@ body {
 
 /* Subtle grid background like the PDF */
 .grid-bg {
+  background-color: var(--color-bg) !important;
   background-image: 
+    linear-gradient(var(--color-bg), var(--color-bg)),
     linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 60px 60px, 60px 60px;
   background-position: center;
 }
 
