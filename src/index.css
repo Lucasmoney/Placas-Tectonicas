@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 :root {
-  --color-bg: #091121; /* Azul muito escuro e elegante */
-  --color-text: #f8fafc; /* Branco suave */
-  --color-accent: #3b82f6; /* Azul vibrante para botões */
-  --color-grid: rgba(255, 255, 255, 0.05); /* Grid sutil clara */
+  --color-bg: #fdfdfc;
+  --color-text: #1a1a1a;
+  --color-accent: #d8705f; /* Terracotta */
+  --color-grid: rgba(0, 0, 0, 0.05);
   
   --font-main: 'Inter', sans-serif;
-  color-scheme: dark;
+  color-scheme: only light;
 }
 
 html {
@@ -25,14 +25,17 @@ html {
 body {
   font-family: var(--font-main);
   background-color: var(--color-bg) !important;
+  /* Imagem PNG 1x1 pixel branco puro para forçar o fundo e quebrar inversores de CSS */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wYAAwAB/AL+f4R4AAAAAElFTkSuQmCC') !important;
+  background-repeat: repeat !important;
   color: var(--color-text) !important;
-  -webkit-text-fill-color: var(--color-text) !important;
+  -webkit-text-fill-color: var(--color-text) !important; /* Força a cor do texto a não ser invertida */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle grid background */
+/* Subtle grid background like the PDF */
 .grid-bg {
   background-color: transparent !important;
   background-image: 

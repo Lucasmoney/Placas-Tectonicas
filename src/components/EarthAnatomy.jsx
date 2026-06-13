@@ -126,12 +126,12 @@ const EarthAnatomy = () => {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
                 style={{ 
-                  background: 'rgba(255, 255, 255, 0.03)', backdropFilter: 'blur(10px)', 
+                  background: 'linear-gradient(145deg, #ffffff, #fdfdfc)', 
                   padding: '2.5rem', 
                   borderRadius: '16px',
                   border: '1px solid var(--color-grid)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-                  borderTop: `4px solid ${activeLayer === 'core' ? '#ff5400' : activeLayer === 'mantle' ? '#e76f51' : 'var(--color-accent)'}`
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
+                  borderTop: `4px solid ${activeLayer === 'core' ? '#ff5400' : activeLayer === 'mantle' ? '#e76f51' : '#1a1a1a'}`
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -141,13 +141,13 @@ const EarthAnatomy = () => {
                   </button>
                 </div>
                 
-                <p className="text-body" style={{ marginBottom: '2.5rem', color: '#94a3b8' }}>
+                <p className="text-body" style={{ marginBottom: '2.5rem', color: '#555' }}>
                   {layers[activeLayer].desc}
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(37, 99, 235, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(216, 112, 95, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <Ruler size={24} color="var(--color-accent)" />
                     </div>
                     <div>
@@ -157,7 +157,7 @@ const EarthAnatomy = () => {
                   </div>
                   
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(37, 99, 235, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(216, 112, 95, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <Thermometer size={24} color="var(--color-accent)" />
                     </div>
                     <div>

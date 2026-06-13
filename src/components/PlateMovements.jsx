@@ -50,7 +50,7 @@ const PlateMovements = () => {
     <section className="section-container">
       <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
         <h2 className="text-huge">A dinâmica dos limites</h2>
-        <p className="text-body" style={{ color: '#94a3b8', marginBottom: '2rem', maxWidth: '600px', margin: '1.5rem auto 0' }}>
+        <p className="text-body" style={{ maxWidth: '600px', margin: '1.5rem auto 0', color: '#555' }}>
           Todo fenômeno geológico de impacto nasce da interação nas bordas das placas. Existem apenas três movimentos fundamentais ditando a geografia do nosso planeta.
         </p>
       </div>
@@ -114,9 +114,9 @@ const PlateMovements = () => {
         </div>
 
         {/* Visual Simulator */}
-        <div style={{ flex: '1 1 300px', height: '400px', background: 'rgba(255, 255, 255, 0.03)', backdropFilter: 'blur(10px)', borderRadius: '24px', border: '1px solid var(--color-grid)', overflow: 'hidden', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ flex: '1 1 300px', background: 'white', borderRadius: '24px', padding: 'clamp(1rem, 5vw, 2rem)', border: '1px solid var(--color-grid)', boxShadow: '0 20px 40px rgba(0,0,0,0.03)', display: 'flex', flexDirection: 'column' }}>
           
-          <div style={{ flex: 1, position: 'relative', background: 'transparent', borderRadius: '12px', overflow: 'hidden', marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }} key={key}>
+          <div style={{ flex: 1, position: 'relative', height: '300px', background: 'var(--color-bg)', borderRadius: '12px', overflow: 'hidden', marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }} key={key}>
             {/* The Simulation Graphics based on activeTab */}
             {activeTab === 'divergent' && (
               <div style={{ position: 'relative', width: '200px', height: '100px', display: 'flex' }}>
