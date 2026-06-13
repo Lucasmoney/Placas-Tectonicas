@@ -94,7 +94,7 @@ const EarthquakesVolcanoes = () => {
               }}
               style={{
                 padding: '2rem',
-                background: 'white',
+                background: 'rgba(255, 255, 255, 0.03)', backdropFilter: 'blur(10px)',
                 borderRadius: '16px',
                 border: '1px solid var(--color-grid)',
                 cursor: 'pointer',

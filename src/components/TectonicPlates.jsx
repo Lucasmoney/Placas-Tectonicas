@@ -50,12 +50,12 @@ const TectonicPlates = () => {
   });
 
   return (
-    <section className="section-container" style={{ backgroundColor: 'white' }}>
+    <section className="section-container" style={{ backgroundColor: 'transparent' }}>
       <div style={{ marginBottom: '4rem', display: 'flex', flexWrap: 'wrap', gap: 'clamp(2rem, 8vw, 4rem)', alignItems: 'center' }}>
         
-        <div style={{ flex: '1 1 300px' }}>
-          <h2 className="text-huge" style={{ marginBottom: '2rem' }}>O que são placas<br/>tectônicas?</h2>
-          <p className="text-body" style={{ color: '#555', maxWidth: '500px', marginBottom: '2rem' }}>
+        <div style={{ flex: '1 1 300px', background: 'rgba(255, 255, 255, 0.03)', backdropFilter: 'blur(10px)', padding: '2.5rem', borderRadius: '24px', border: '1px solid var(--color-grid)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+          <h2 className="text-huge" style={{ marginBottom: '1.5rem' }}>O Quebra-Cabeça Tectônico</h2>
+          <p className="text-body" style={{ color: '#94a3b8', maxWidth: '500px', marginBottom: '2rem' }}>
             A litosfera terrestre não é uma casca contínua. Ela é um gigantesco quebra-cabeça fracturado em blocos de rocha flutuante.
             <br/><br/>
             Esses blocos se movem independentemente. <strong style={{ color: 'var(--color-accent)' }}>Arraste as peças ao lado</strong> para entender como elas se separam e interagem na prática!
@@ -105,7 +105,9 @@ const TectonicPlates = () => {
               >
                 <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: platesData[activePlate].borderColor, fontWeight: 800 }}>{platesData[activePlate].name}</h4>
                 <div style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem', color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Área: {platesData[activePlate].size}</div>
-                <p style={{ fontSize: '1rem', color: '#555', lineHeight: 1.5 }}>{platesData[activePlate].desc}</p>
+                <p className="text-body" style={{ color: '#94a3b8' }}>
+                  {platesData[activePlate].desc}
+                </p>
               </motion.div>
             ) : (
                <motion.div

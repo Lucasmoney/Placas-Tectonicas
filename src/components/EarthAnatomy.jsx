@@ -126,12 +126,12 @@ const EarthAnatomy = () => {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
                 style={{ 
-                  background: 'linear-gradient(145deg, #ffffff, #fdfdfc)', 
+                  background: 'rgba(255, 255, 255, 0.03)', backdropFilter: 'blur(10px)', 
                   padding: '2.5rem', 
                   borderRadius: '16px',
                   border: '1px solid var(--color-grid)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
-                  borderTop: `4px solid ${activeLayer === 'core' ? '#ff5400' : activeLayer === 'mantle' ? '#e76f51' : '#1a1a1a'}`
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+                  borderTop: `4px solid ${activeLayer === 'core' ? '#ff5400' : activeLayer === 'mantle' ? '#e76f51' : 'var(--color-accent)'}`
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -141,7 +141,7 @@ const EarthAnatomy = () => {
                   </button>
                 </div>
                 
-                <p className="text-body" style={{ marginBottom: '2.5rem', color: '#555' }}>
+                <p className="text-body" style={{ marginBottom: '2.5rem', color: '#94a3b8' }}>
                   {layers[activeLayer].desc}
                 </p>
 
