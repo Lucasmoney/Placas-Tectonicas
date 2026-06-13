@@ -1,64 +1,60 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, ArrowRight } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
   const scrollToNext = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    const sections = Array.from(document.querySelectorAll('.section-container'));
+    if (sections.length > 1) {
+      sections[1].scrollIntoView();
+    } else {
+      window.scrollBy(0, window.innerHeight);
+    }
   };
 
   return (
-    <section className="section-container" style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      <div style={{ position: 'relative', zIndex: 10 }}>
-        <motion.div 
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{ width: '80px', height: '8px', background: 'var(--color-accent)', marginBottom: '2rem', borderRadius: '4px' }}
-        />
-        
+    <section className="section-container" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Background Animated Elements */}
+      <motion.div 
+        className="hero-bg-lines"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        style={{
+          position: 'absolute',
+          top: 0, left: 0, right: 0, bottom: 0,
+          backgroundImage: 'radial-gradient(circle at center, rgba(216, 112, 95, 0.05) 0%, transparent 70%)',
+          zIndex: 0
+        }}
+      />
+
+      <div style={{ position: 'relative', zIndex: 1 }}>
         <motion.h1 
           className="text-hero"
-          initial={{ y: 30, opacity: 0 }}
+          initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{ color: 'var(--color-text)' }}
         >
-          A Dinâmica da <br/>
-          <span style={{ color: 'var(--color-accent)' }}>Terra</span>
+          A mecânica <br />
+          <span style={{ color: 'var(--color-accent)' }}>do nosso planeta</span>
         </motion.h1>
 
         <motion.p 
+          className="text-body"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          style={{ marginTop: '2rem', maxWidth: '600px', fontSize: '1.25rem', color: 'var(--color-text-muted)' }}
+          style={{ marginTop: '2rem', maxWidth: '600px', fontSize: '1.25rem', color: '#555' }}
         >
           Uma planta baixa da litosfera terrestre: sistemas, motor e impactos geológicos.
         </motion.p>
       </div>
 
-      <div style={{ position: 'relative', zIndex: 10, marginTop: '3rem' }}>
-        <button 
-          onClick={scrollToNext}
-          style={{ 
-            display: 'flex', alignItems: 'center', gap: '0.5rem', 
-            padding: '1rem 2.5rem', background: 'var(--color-accent)', 
-            color: 'white', borderRadius: '30px', fontSize: '1.125rem', 
-            fontWeight: 800, letterSpacing: '0.05em', textTransform: 'uppercase',
-            boxShadow: '0 10px 20px rgba(37, 99, 235, 0.3)',
-            cursor: 'pointer', border: 'none'
-          }}
-        >
-          Explorar Planeta <ArrowRight size={20} />
-        </button>
-      </div>
-
-      {/* Scroll indicator */}
-      <motion.div 
+      <motion.button
+        onClick={scrollToNext}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
+        transition={{ delay: 1, duration: 0.8 }}
         style={{
           position: 'absolute',
           bottom: '10%',
@@ -82,36 +78,16 @@ const HeroSection = () => {
             alignItems: 'center', 
             justifyContent: 'center',
             width: '48px', height: '48px',
-            border: '2px solid var(--color-grid)',
-            borderRadius: '50%'
+            borderRadius: '50%',
+            border: '1px solid var(--color-grid)',
+            backgroundColor: 'white',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
           }}
         >
-          <ArrowDown size={24} color="var(--color-accent)" />
+          <ArrowDown size={20} color="var(--color-accent)" />
         </motion.span>
-        Scroll para descer
-      </motion.div>
-
-      {/* Hero Image */}
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-        style={{
-          position: 'absolute',
-          right: '-5%',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          width: '55%',
-          height: '80%',
-          zIndex: 1,
-          opacity: 0.9,
-          backgroundImage: 'url(/hero.png)', /* Certifique-se que hero.png está em /public */
-          backgroundSize: 'contain',
-          backgroundPosition: 'center right',
-          backgroundRepeat: 'no-repeat',
-          filter: 'drop-shadow(-20px 20px 40px rgba(0,0,0,0.05))'
-        }}
-      />
+        Explorar
+      </motion.button>
     </section>
   );
 };

@@ -50,7 +50,7 @@ const PlateMovements = () => {
     <section className="section-container">
       <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
         <h2 className="text-huge">A dinâmica dos limites</h2>
-        <p className="text-body" style={{ maxWidth: '600px', margin: '1.5rem auto 0', color: 'var(--color-text-muted)' }}>
+        <p className="text-body" style={{ maxWidth: '600px', margin: '1.5rem auto 0', color: '#555' }}>
           Todo fenômeno geológico de impacto nasce da interação nas bordas das placas. Existem apenas três movimentos fundamentais ditando a geografia do nosso planeta.
         </p>
       </div>
@@ -91,17 +91,17 @@ const PlateMovements = () => {
               transition={{ duration: 0.3 }}
             >
               <h3 style={{ fontSize: '2.5rem', marginBottom: '0.5rem', fontWeight: 800 }}>{movements[activeTab].title}</h3>
-              <p style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)', marginBottom: '2.5rem' }}>{movements[activeTab].subtitle}</p>
+              <p style={{ fontSize: '1.25rem', color: '#888', marginBottom: '2.5rem' }}>{movements[activeTab].subtitle}</p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div>
                   <div style={{ fontWeight: 600, marginBottom: '0.5rem', color: 'var(--color-text)', textTransform: 'uppercase', fontSize: '0.875rem', letterSpacing: '0.05em' }}>Ação Principal</div>
-                  <div style={{ color: 'var(--color-text-muted)', lineHeight: 1.6 }}>{movements[activeTab].action}</div>
+                  <div style={{ color: '#555', lineHeight: 1.6 }}>{movements[activeTab].action}</div>
                 </div>
                 <div style={{ width: '100%', height: '1px', background: 'var(--color-grid)' }} />
                 <div>
                   <div style={{ fontWeight: 600, marginBottom: '0.5rem', color: 'var(--color-text)', textTransform: 'uppercase', fontSize: '0.875rem', letterSpacing: '0.05em' }}>Assinaturas Geológicas</div>
-                  <div style={{ color: 'var(--color-text-muted)', lineHeight: 1.6 }}>{movements[activeTab].signature}</div>
+                  <div style={{ color: '#555', lineHeight: 1.6 }}>{movements[activeTab].signature}</div>
                 </div>
                 <div style={{ width: '100%', height: '1px', background: 'var(--color-grid)' }} />
                 <div>
@@ -113,7 +113,8 @@ const PlateMovements = () => {
           </AnimatePresence>
         </div>
 
-        <div style={{ flex: '1 1 300px', background: 'var(--color-card)', padding: '2.5rem', borderRadius: '24px', border: '1px solid var(--color-grid)', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column' }}>
+        {/* Visual Simulator */}
+        <div style={{ flex: '1 1 300px', background: 'white', borderRadius: '24px', padding: 'clamp(1rem, 5vw, 2rem)', border: '1px solid var(--color-grid)', boxShadow: '0 20px 40px rgba(0,0,0,0.03)', display: 'flex', flexDirection: 'column' }}>
           
           <div style={{ flex: 1, position: 'relative', height: '300px', background: 'var(--color-bg)', borderRadius: '12px', overflow: 'hidden', marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }} key={key}>
             {/* The Simulation Graphics based on activeTab */}

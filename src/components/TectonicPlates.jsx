@@ -11,7 +11,7 @@ const TectonicPlates = () => {
     pacifica: { 
       id: 'pacifica', name: 'Placa do Pacífico', size: '103.3M km²', 
       desc: 'A maior placa do planeta. Seu movimento e atrito constante nas bordas criam o intenso Círculo de Fogo.', 
-      color: 'var(--color-card-alt)', borderColor: 'var(--color-accent-dark)', 
+      color: '#fce8e6', borderColor: '#d8705f', 
       path: "M 60 80 L 320 60 L 380 320 L 260 540 L 40 480 Z", 
       centerX: 200, centerY: 280, 
       scatter: { x: -80, y: -40, rotate: -10 } 
@@ -19,7 +19,7 @@ const TectonicPlates = () => {
     nazca: { 
       id: 'nazca', name: 'Placa de Nazca', size: '15.6M km²', 
       desc: 'Placa oceânica pesada que afunda (subducção) sob a América do Sul, erguendo a majestosa Cordilheira dos Andes.', 
-      color: 'var(--color-card)', borderColor: 'var(--color-accent)', 
+      color: '#fef7e0', borderColor: '#f2c94c', 
       path: "M 350 280 L 470 320 L 440 520 L 300 480 Z", 
       centerX: 390, centerY: 400, 
       scatter: { x: -30, y: 80, rotate: 15 } 
@@ -27,7 +27,7 @@ const TectonicPlates = () => {
     sul_americana: { 
       id: 'sul_americana', name: 'Placa Sul-Americana', size: '43.6M km²', 
       desc: 'O Brasil repousa de forma segura exatamente no centro deste enorme bloco rochoso, longe do caos das bordas.', 
-      color: 'var(--color-bg)', borderColor: 'var(--color-accent-light)', 
+      color: '#e6f4ea', borderColor: '#27ae60', 
       path: "M 440 160 L 660 140 L 740 380 L 600 560 L 450 540 L 480 300 Z", 
       centerX: 580, centerY: 350, 
       scatter: { x: 40, y: -60, rotate: 8 } 
@@ -35,7 +35,7 @@ const TectonicPlates = () => {
     africana: { 
       id: 'africana', name: 'Placa Africana', size: '61.3M km²', 
       desc: 'Está se afastando da placa Sul-Americana, fazendo com que o Oceano Atlântico cresça alguns centímetros por ano.', 
-      color: '#ffffff', borderColor: 'var(--color-accent-neon)', 
+      color: '#f3e5f5', borderColor: '#9b59b6', 
       path: "M 700 120 L 960 100 L 960 450 L 800 600 L 640 580 L 760 360 Z", 
       centerX: 820, centerY: 350, 
       scatter: { x: 120, y: 40, rotate: -12 } 
@@ -54,11 +54,11 @@ const TectonicPlates = () => {
       <div style={{ marginBottom: '4rem', display: 'flex', flexWrap: 'wrap', gap: 'clamp(2rem, 8vw, 4rem)', alignItems: 'center' }}>
         
         <div style={{ flex: '1 1 300px' }}>
-          <h2 className="text-huge" style={{ marginBottom: '2rem' }}>O que são placas<br/>tectônicas?</h2>
-          <p className="text-body" style={{ color: 'var(--color-text-muted)', maxWidth: '500px', marginBottom: '2rem' }}>
+          <h2 className="text-huge" style={{ marginBottom: '2rem', color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a' }}>O que são placas<br/>tectônicas?</h2>
+          <p className="text-body" style={{ color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a', maxWidth: '500px', marginBottom: '2rem' }}>
             A litosfera terrestre não é uma casca contínua. Ela é um gigantesco quebra-cabeça fracturado em blocos de rocha flutuante.
             <br/><br/>
-            Esses blocos se movem independentemente. <strong style={{ color: 'var(--color-accent)' }}>Arraste as peças ao lado</strong> para entender como elas se separam e interagem na prática!
+            Esses blocos se movem independentemente. <strong style={{ color: 'var(--color-accent)', WebkitTextFillColor: 'var(--color-accent)' }}>Arraste as peças ao lado</strong> para entender como elas se separam e interagem na prática!
           </p>
 
           <button 
@@ -68,12 +68,13 @@ const TectonicPlates = () => {
               padding: '1rem 2rem', 
               background: isScattered ? 'var(--color-text)' : 'var(--color-accent)', 
               color: 'white',
+              WebkitTextFillColor: 'white',
               borderRadius: '30px', 
               fontWeight: 600, fontSize: '1rem', 
               transition: 'all 0.3s',
               cursor: 'pointer',
               border: 'none',
-              boxShadow: '0 10px 20px rgba(37, 99, 235, 0.2)'
+              boxShadow: '0 10px 20px rgba(0,0,0,0.1)'
             }}
           >
             {isScattered ? <RefreshCcw size={20} /> : <Maximize2 size={20} />}
@@ -95,18 +96,17 @@ const TectonicPlates = () => {
                   top: '-1rem',
                   left: 0,
                   right: 0,
-                  background: 'var(--color-card)',
+                  background: 'white',
                   padding: '1.5rem',
                   borderRadius: '16px',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.05)',
-                  border: '1px solid var(--color-grid)',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
                   borderLeft: `5px solid ${platesData[activePlate].borderColor}`,
                   zIndex: 20
                 }}
               >
-                <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: platesData[activePlate].borderColor, fontWeight: 800 }}>{platesData[activePlate].name}</h4>
-                <div style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--color-text)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Área: {platesData[activePlate].size}</div>
-                <p style={{ fontSize: '1rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>{platesData[activePlate].desc}</p>
+                <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: platesData[activePlate].borderColor, WebkitTextFillColor: platesData[activePlate].borderColor, fontWeight: 800 }}>{platesData[activePlate].name}</h4>
+                <div style={{ fontSize: '0.875rem', fontWeight: 600, marginBottom: '0.5rem', color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Área: {platesData[activePlate].size}</div>
+                <p style={{ fontSize: '1rem', color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a', lineHeight: 1.5 }}>{platesData[activePlate].desc}</p>
               </motion.div>
             ) : (
                <motion.div
@@ -131,7 +131,7 @@ const TectonicPlates = () => {
                   boxShadow: '0 5px 15px rgba(0,0,0,0.05)'
                 }}
               >
-                <Hand size={18} color="var(--color-accent)" /> Toque e arraste as placas
+                <Hand size={18} color="var(--color-accent)" /> <span style={{ color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a' }}>Toque e arraste as placas</span>
               </motion.div>
             )}
           </AnimatePresence>
