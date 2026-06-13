@@ -89,12 +89,12 @@ const EarthquakesVolcanoes = () => {
               onMouseLeave={() => setActivePoint(null)}
               animate={{ 
                 scale: activePoint === key ? 1.02 : 1,
-                boxShadow: activePoint === key ? '0 10px 30px rgba(0,0,0,0.05)' : 'none',
+                boxShadow: activePoint === key ? '0 20px 40px rgba(0,0,0,0.05)' : 'none',
                 borderColor: activePoint === key ? 'var(--color-accent)' : 'var(--color-grid)'
               }}
               style={{
                 padding: '2rem',
-                background: 'white',
+                background: 'var(--color-card)',
                 borderRadius: '16px',
                 border: '1px solid var(--color-grid)',
                 cursor: 'pointer',
@@ -102,7 +102,7 @@ const EarthquakesVolcanoes = () => {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'rgba(216, 112, 95, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--color-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {points[key].icon}
                 </div>
                 <div>

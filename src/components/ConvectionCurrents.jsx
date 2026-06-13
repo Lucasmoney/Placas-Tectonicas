@@ -6,7 +6,7 @@ const ConvectionCurrents = () => {
     <section className="section-container" style={{ backgroundColor: 'var(--color-bg)' }}>
       <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
         <h2 className="text-huge">O motor silencioso</h2>
-        <p className="text-body" style={{ maxWidth: '700px', margin: '1rem auto 0', color: '#555' }}>
+        <p className="text-body" style={{ maxWidth: '700px', margin: '1rem auto 0', color: 'var(--color-text-muted)' }}>
           A força mecânica que desloca montanhas e abre oceanos nasce de uma diferença de densidade térmica no interior do planeta.
         </p>
       </div>
@@ -31,9 +31,9 @@ const ConvectionCurrents = () => {
             >
               <div style={{ 
                 width: '40px', height: '40px', flexShrink: 0,
-                borderRadius: '50%', border: '2px solid var(--color-accent)', 
+                borderRadius: '50%', border: '2px solid #3b82f6', 
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontWeight: 800, color: 'var(--color-accent)', fontSize: '1.25rem'
+                fontWeight: 800, color: '#3b82f6', fontSize: '1.25rem'
               }}>
                 {step.id}
               </div>
@@ -45,11 +45,11 @@ const ConvectionCurrents = () => {
         </div>
 
         {/* Animation Canvas */}
-        <div style={{ flex: '1 1 300px', background: 'white', borderRadius: '24px', border: '1px solid var(--color-grid)', padding: 'clamp(1rem, 5vw, 2rem)', display: 'flex', justifyContent: 'center', boxShadow: '0 20px 40px rgba(0,0,0,0.03)' }}>
-          <div style={{ position: 'relative', width: '100%', maxWidth: '400px', paddingBottom: '100%', background: '#fafafa', borderRadius: '50%', overflow: 'hidden', border: '1px solid #eee' }}>
+        <div style={{ flex: '1 1 300px', background: 'var(--color-card)', borderRadius: '24px', border: '1px solid var(--color-grid)', padding: 'clamp(1rem, 5vw, 2rem)', display: 'flex', justifyContent: 'center', boxShadow: '0 20px 40px rgba(0,0,0,0.05)' }}>
+          <div style={{ position: 'relative', width: '100%', maxWidth: '400px', paddingBottom: '100%', background: 'radial-gradient(circle at center, #1e3a8a 0%, #0f172a 100%)', borderRadius: '50%', overflow: 'hidden', border: '1px solid #1e3a8a' }}>
             
             {/* Core */}
-            <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '60%', height: '60%', background: 'radial-gradient(circle, #ff5400 0%, #b65949 50%, transparent 70%)', borderRadius: '50%', zIndex: 1, filter: 'drop-shadow(0 -10px 20px rgba(255, 84, 0, 0.4))' }} />
+            <div style={{ position: 'absolute', bottom: '-20%', left: '50%', transform: 'translateX(-50%)', width: '60%', height: '60%', background: 'radial-gradient(circle, #60a5fa 0%, #2563eb 50%, transparent 70%)', borderRadius: '50%', zIndex: 1, filter: 'drop-shadow(0 -10px 20px #3b82f6)' }} />
             <div style={{ position: 'absolute', bottom: '-10%', left: '50%', transform: 'translateX(-50%)', fontWeight: 800, color: '#fff', zIndex: 2, textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>NÚCLEO</div>
 
             {/* Crust / Lithosphere */}
@@ -65,15 +65,15 @@ const ConvectionCurrents = () => {
               {/* Left Cell */}
               <motion.path 
                 d="M 45 80 Q 20 80 15 50 Q 15 20 40 20" 
-                fill="none" stroke="var(--color-accent)" strokeWidth="3" strokeDasharray="5,5"
+                fill="none" stroke="#60a5fa" strokeWidth="3" strokeDasharray="5,5"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                style={{ filter: 'drop-shadow(0 0 5px rgba(216,112,95,0.6))' }}
+                style={{ filter: 'drop-shadow(0 0 5px rgba(96,165,250,0.6))' }}
               />
               <motion.path 
                 d="M 40 20 Q 25 25 15 50 Q 20 70 45 80" 
-                fill="none" stroke="#888" strokeWidth="1" strokeDasharray="3,3"
+                fill="none" stroke="#3b82f6" strokeWidth="1" strokeDasharray="3,3"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1.5 }}

@@ -53,9 +53,9 @@ function App() {
         <Summary />
         <Quiz />
         <footer style={{ padding: '3rem 5%', textAlign: 'center', backgroundColor: 'transparent', marginTop: '2rem' }}>
-          <div style={{ padding: '2rem', borderRadius: '16px', background: 'white', border: '1px solid var(--color-grid)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
+          <div style={{ padding: '2rem', borderRadius: '16px', background: 'var(--color-card)', border: '1px solid var(--color-grid)', boxShadow: '0 10px 30px rgba(37,99,235,0.05)' }}>
             <p style={{ color: 'var(--color-accent)', fontSize: '0.875rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>Equipe de Desenvolvimento</p>
-            <p style={{ color: '#555', fontSize: '1.125rem', fontWeight: 600 }}>
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '1.125rem', fontWeight: 600 }}>
               Beatriz &bull; Eloisa &bull; Maria Vitória &bull; Ana Carolina &bull; Milena &bull; Yasmin &bull; Lucas
             </p>
           </div>
@@ -70,7 +70,7 @@ function App() {
             exit={{ opacity: 0, y: 20 }}
             transition={{ y: { repeat: Infinity, duration: 2, ease: "easeInOut" } }}
             onClick={scrollDown}
-            whileHover={{ scale: 1.1, backgroundColor: '#c55d4c' }}
+            whileHover={{ scale: 1.1, backgroundColor: 'var(--color-accent-hover)' }}
             whileTap={{ scale: 0.9 }}
             style={{
               position: 'fixed',
@@ -88,7 +88,7 @@ function App() {
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: '0 8px 20px rgba(216, 112, 95, 0.4)'
+              boxShadow: '0 8px 20px rgba(37, 99, 235, 0.4)'
             }}
           >
             <ChevronDown size={32} />

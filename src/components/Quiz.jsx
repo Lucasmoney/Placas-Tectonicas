@@ -99,14 +99,14 @@ const Quiz = () => {
       <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h2 className="text-huge">Teste de Conhecimento</h2>
-          <p className="text-body" style={{ color: '#555', marginTop: '1rem' }}>Todas as respostas estão contidas no material acima. Vamos ver se você aprendeu de verdade!</p>
+          <p className="text-body" style={{ color: 'var(--color-text-muted)', marginTop: '1rem' }}>Todas as respostas estão contidas no material acima. Vamos ver se você aprendeu de verdade!</p>
         </div>
 
-        <div style={{ background: 'white', borderRadius: '24px', padding: 'clamp(1.5rem, 5vw, 3rem)', border: '1px solid var(--color-grid)', boxShadow: '0 20px 40px rgba(0,0,0,0.03)', minHeight: '450px', position: 'relative' }}>
+        <div style={{ background: 'var(--color-card)', borderRadius: '24px', padding: 'clamp(1.5rem, 5vw, 3rem)', border: '1px solid var(--color-grid)', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', minHeight: '450px', position: 'relative' }}>
           <AnimatePresence mode="wait">
             {!showResult ? (
               <motion.div key="quiz" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem', color: '#888', fontWeight: 600, textTransform: 'uppercase', fontSize: '0.875rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem', color: 'var(--color-text-muted)', fontWeight: 600, textTransform: 'uppercase', fontSize: '0.875rem' }}>
                   <span>Pergunta {currentQ + 1} de {questions.length}</span>
                   <span>Pontuação: {score}</span>
                 </div>
@@ -115,15 +115,15 @@ const Quiz = () => {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {questions[currentQ].options.map((opt, idx) => {
-                    let bg = 'var(--color-bg)';
+                    let bg = 'var(--color-card-alt)';
                     let border = '1px solid var(--color-grid)';
                     let icon = null;
 
                     if (selectedAnswer !== null) {
                       if (idx === questions[currentQ].ans) {
-                        bg = '#e6f4ea';
-                        border = '1px solid #34a853';
-                        icon = <CheckCircle color="#34a853" />;
+                        bg = 'rgba(96, 165, 250, 0.1)';
+                        border = '1px solid var(--color-accent-light)';
+                        icon = <CheckCircle color="var(--color-accent-light)" />;
                       } else if (idx === selectedAnswer) {
                         bg = '#fce8e6';
                         border = '1px solid #ea4335';
@@ -149,7 +149,8 @@ const Quiz = () => {
                           justifyContent: 'space-between',
                           alignItems: 'center',
                           transition: 'all 0.2s',
-                          cursor: selectedAnswer !== null ? 'default' : 'pointer'
+                          cursor: selectedAnswer !== null ? 'default' : 'pointer',
+                          opacity: selectedAnswer !== null && idx !== questions[currentQ].ans && idx !== selectedAnswer ? 0.5 : 1
                         }}
                       >
                         <span style={{ paddingRight: '1rem' }}>{opt}</span>
@@ -168,12 +169,12 @@ const Quiz = () => {
                     >
                       <div style={{ 
                         padding: '1.5rem', 
-                        background: selectedAnswer === questions[currentQ].ans ? '#e6f4ea' : '#fce8e6', 
+                        background: selectedAnswer === questions[currentQ].ans ? 'rgba(96, 165, 250, 0.1)' : '#fce8e6', 
                         borderRadius: '12px', 
-                        borderLeft: `4px solid ${selectedAnswer === questions[currentQ].ans ? '#34a853' : '#ea4335'}`
+                        borderLeft: `4px solid ${selectedAnswer === questions[currentQ].ans ? 'var(--color-accent-light)' : '#ea4335'}`
                       }}>
-                        <p style={{ fontSize: '1rem', color: '#333', lineHeight: 1.5 }}>
-                          <strong style={{ color: selectedAnswer === questions[currentQ].ans ? '#137333' : '#c5221f' }}>
+                        <p style={{ fontSize: '1rem', color: 'var(--color-text)', lineHeight: 1.5 }}>
+                          <strong style={{ color: selectedAnswer === questions[currentQ].ans ? 'var(--color-accent-dark)' : '#c5221f' }}>
                             {selectedAnswer === questions[currentQ].ans ? 'Correto! ' : 'Incorreto. '}
                           </strong>
                           {questions[currentQ].exp}
@@ -183,7 +184,7 @@ const Quiz = () => {
                       <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.5rem' }}>
                         <button 
                           onClick={handleNext}
-                          style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 2rem', background: 'var(--color-text)', color: 'white', borderRadius: '30px', fontSize: '1rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}
+                          style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 2rem', background: 'var(--color-accent)', color: 'white', borderRadius: '30px', fontSize: '1rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}
                         >
                           {currentQ + 1 < questions.length ? 'Próxima Pergunta' : 'Ver Resultado'} <ArrowRight size={18} />
                         </button>
@@ -199,12 +200,12 @@ const Quiz = () => {
                 <div style={{ fontSize: '6rem', fontWeight: 800, color: 'var(--color-accent)', marginBottom: '1rem', lineHeight: 1 }}>
                   {score}/{questions.length}
                 </div>
-                <p className="text-body" style={{ color: '#555', marginBottom: '3rem', fontSize: '1.25rem' }}>
+                <p className="text-body" style={{ color: 'var(--color-text-muted)', marginBottom: '3rem', fontSize: '1.25rem' }}>
                   {score === 10 ? "Perfeito! Você é um especialista em placas tectônicas e comprovou sua leitura!" : 
                    score >= 7 ? "Muito bom! Você absorveu bem o conteúdo da página." : 
                    "Boa tentativa! Que tal reler as seções acima e testar novamente?"}
                 </p>
-                <button onClick={restartQuiz} style={{ padding: '1rem 3rem', background: 'var(--color-text)', color: 'white', borderRadius: '30px', fontSize: '1.125rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>
+                <button onClick={restartQuiz} style={{ padding: '1rem 3rem', background: 'var(--color-accent)', color: 'white', borderRadius: '30px', fontSize: '1.125rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>
                   Tentar Novamente
                 </button>
               </motion.div>
