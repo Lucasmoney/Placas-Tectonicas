@@ -28,7 +28,17 @@ function App() {
   }, []);
 
   const scrollDown = () => {
-    window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+    const sections = Array.from(document.querySelectorAll('.section-container'));
+    const nextSection = sections.find(section => {
+      const rect = section.getBoundingClientRect();
+      return rect.top > 10; // Acha a primeira seção que está abaixo do viewport atual
+    });
+
+    if (nextSection) {
+      nextSection.scrollIntoView(); 
+    } else {
+      window.scrollBy(0, window.innerHeight);
+    }
   };
 
   return (

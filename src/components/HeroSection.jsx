@@ -4,7 +4,12 @@ import { ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
   const scrollToNext = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    const sections = Array.from(document.querySelectorAll('.section-container'));
+    if (sections.length > 1) {
+      sections[1].scrollIntoView();
+    } else {
+      window.scrollBy(0, window.innerHeight);
+    }
   };
 
   return (
