@@ -7,11 +7,13 @@
   --color-grid: rgba(0, 0, 0, 0.05);
   
   --font-main: 'Inter', sans-serif;
+  color-scheme: light;
 }
 
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  background-color: var(--color-bg);
 }
 
 * {
