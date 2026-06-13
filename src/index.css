@@ -7,13 +7,13 @@
   --color-grid: rgba(0, 0, 0, 0.05);
   
   --font-main: 'Inter', sans-serif;
-  color-scheme: light;
+  color-scheme: only light;
 }
 
 html {
   scroll-snap-type: y proximity;
   scroll-behavior: smooth;
-  background-color: var(--color-bg);
+  background-color: var(--color-bg) !important;
 }
 
 * {
@@ -25,8 +25,11 @@ html {
 body {
   font-family: var(--font-main);
   background-color: var(--color-bg) !important;
-  background-image: linear-gradient(var(--color-bg), var(--color-bg)) !important; /* Anti-inversion hack for MIUI/Samsung */
+  /* Imagem PNG 1x1 pixel branco puro para forçar o fundo e quebrar inversores de CSS */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wYAAwAB/AL+f4R4AAAAAElFTkSuQmCC') !important;
+  background-repeat: repeat !important;
   color: var(--color-text) !important;
+  -webkit-text-fill-color: var(--color-text) !important; /* Força a cor do texto a não ser invertida */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,12 +37,11 @@ body {
 
 /* Subtle grid background like the PDF */
 .grid-bg {
-  background-color: var(--color-bg) !important;
+  background-color: transparent !important;
   background-image: 
-    linear-gradient(var(--color-bg), var(--color-bg)),
     linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px) !important;
-  background-size: 100% 100%, 60px 60px, 60px 60px;
+  background-size: 60px 60px, 60px 60px;
   background-position: center;
 }
 
